@@ -7,6 +7,10 @@ app.post("/asd", (req, res) => {
   console.log(req, 'dvvla')
   return res.type('html').send(html)
 });
+app.post('/test', (req, res) => {
+  console.log(req.body, 'fgh')
+  res.json({requestBody: req.body})  // <==== req.body will be a parsed JSON object
+})
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
